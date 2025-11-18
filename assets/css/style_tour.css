@@ -1,0 +1,433 @@
+/* Modern Design System - Tour Page */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --accent-red: #ff0033;
+  --accent-red-dark: #cc0026;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #666666;
+  --border-color: #2a2a2a;
+  --gradient-1: linear-gradient(135deg, #ff0033 0%, #cc0026 100%);
+  --gradient-2: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(255, 0, 51, 0.2);
+  --shadow-glow: 0 0 20px rgba(255, 0, 51, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 0, 51, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 0, 51, 0.05) 0px, transparent 50%);
+  min-height: 100vh;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.m1 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Modern Header */
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--gradient-2);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/cartiii.png') no-repeat center right;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 4px;
+  text-shadow: 0 0 30px rgba(255, 0, 51, 0.3);
+}
+
+header p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modern Navigation */
+nav {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  margin: 0 -2rem 3rem -2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-secondary);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+nav a:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+nav a:hover::before {
+  left: 0;
+}
+
+nav a.active {
+  color: var(--text-primary);
+  background: var(--gradient-1);
+}
+
+nav a.active::before {
+  left: 0;
+}
+
+/* Modern Main Content */
+main {
+  padding: 2rem 0 8rem 0;
+}
+
+.center-image-tour {
+  display: block;
+  margin: 0 auto 3rem auto;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.4s ease;
+}
+
+.center-image-tour:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Tour Container */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.tourh3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--bg-card);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 900px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tourh3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-1);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.tourh3:hover {
+  transform: translateX(8px);
+  border-color: var(--accent-red);
+  box-shadow: var(--shadow-md);
+}
+
+.tourh3:hover::before {
+  transform: scaleY(1);
+}
+
+.date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-red);
+  min-width: 80px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tourh3 span:not(.date) {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Modern Button */
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border: none;
+  padding: 0.875rem 2rem;
+  background: var(--gradient-1);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button a {
+  text-decoration: none;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 6rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: var(--gradient-1);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .tourh3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .date {
+    font-size: 1rem;
+  }
+  
+  .tourh3 span:not(.date) {
+    font-size: 1rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    gap: 0.25rem;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .m1 {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 2rem 1rem;
+  }
+  
+  nav {
+    padding: 0 1rem;
+    margin: 0 -1rem 2rem -1rem;
+  }
+  
+  .center-image-tour {
+    margin-bottom: 2rem;
+  }
+  
+  .tourh3 {
+    padding: 1rem;
+  }
+  
+  .date {
+    font-size: 0.9rem;
+  }
+  
+  .tourh3 span:not(.date) {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.container:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.container:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.container:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red-dark);
+}
